@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products-EKABStore | Ecommerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"><!--this link is from google to et different types of fonts-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--this link is from font awesome in google, a cdn link-->
+    <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="about-ekkab">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" width="125px"></a>
+            </div>
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" class="menu-icon" onclick="menutggle()">
+        </div>
+        <div class="text-box">
+            <a href="" class="hero-btn">GET TO KNOW US</a>
+        </div>
+    </div>
+
+    <!-- our story  -->
+
+    <div class="story">
+        <div class="title">
+            <h1>Our Story</h1>
+        </div>
+        <div class="story-article">
+            <P>EKKAB Store: Where Dreams Met Pixels and Baskets Blossomed
+
+                In 2012, within a sun-drenched studio, three visionaries—Ella, Kieran, and Abigail—conjured EKKAB Store.
+                Their initials became a canvas for an online marketplace where artisans’ creations danced with
+                discerning shoppers. Pixels and code harmonized as Ella designed, Kieran coded, and Abigail wove
+                stories. Each product—be it a Tuscan mug or a silver necklace—held a whispered backstory. Word spread,
+                love letters bloomed in reviews, and EKKAB Store thrived—a symphony of makers, dreamers, and that
+                antique coffee table where it all began.</P>
+        </div>
+    </div>
+
+    <!-- TEAM  -->
+
+    <div class="Team" id="Team">
+        <div class="title">
+            <h2>Meet The Team</h2>
+        </div>
+        <ul class="cards">
+            <li class="card">
+                <img src="images/charo.jpg" alt="img">
+                <h3>JAMES CHARO:</h3>
+                <p> Chief Executive Officer, (CEO)</p>
+            </li>
+            <li class="card">
+                <img src="IMAGES/ceo.jpg" alt="img">
+                <h3>Caroline Bennet:</h3>
+                <p>Web Developer</p>
+            </li>
+            <li class="card">
+                <img src="IMAGES/soft.webp" alt="img">
+                <h3>Alaric Saltzman:</h3>
+                <p>Director Of Marketing</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- achievements  -->
+    <div class="achievements-section">
+        <div class="title">
+            <h2>Our Achievements</h2>
+        </div>
+        <p>EKKAB Store has grown exponentially, thanks to our loyal customers and dedicated team.</p>
+        <div class="achievements-container">
+            <div class="achievement-box">
+                <img src="images/users.png">
+                <h3>500k+</h3>
+                <p>Satisfied Customers</p>
+            </div>
+            <div class="achievement-box">
+                <img src="images/product.png">
+                <h3>10k+</h3>
+                <p>Products Available</p>
+            </div>
+            <div class="achievement-box">
+                <img src="images/globe.jpg">
+                <h3>50+</h3>
+                <p>Countries Served</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer  -->
+    <div class="footer">
+        <div class="containerr">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and IOS</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to many</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">&copy; 2024 EKKAB Store All rights reserved</p>
+        </div>
+    </div>
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

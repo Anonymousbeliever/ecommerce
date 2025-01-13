@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products-EKABStore | Ecommerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"><!--this link is from google to et different types of fonts-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--this link is from font awesome in google, a cdn link-->
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" width="125px"></a>
+        </div>
+        <nav>
+            <ul id="MenuItems">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <img src="images/cart.png" width="30px" height="30px">
+        <img src="images/menu.png" class="menu-icon" onclick="menutggle()">
+    </div>
+
+
+    <!-- .cart items details  -->
+    <main>
+        <h1 class="h1">Shopping Cart</h1>
+        <table>
+            <tr>
+                <th>Remove</th>
+                <th>Image</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            <tr>
+                <td><button class="remove-btn"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                <td><img src="images/jacket.png" width="80PX"></td>
+                <td>Faded Bomber Jacket</td>
+                <td>$2450.00</td>
+                <td><input type="number" value="1"></td>
+                <td>$2450.00</td>
+            </tr>
+            <tr>
+                <td><button class="remove-btn"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                <td><img src="images/category-1.jpg" width="80PX"></td>
+                <td>Sauvage Dior Perfume</td>
+                <td>$100.00</td>
+                <td><input type="number" value="1"></td>
+                <td>$100.00</td>
+            </tr>
+            <tr>
+                <td><button class="remove-btn"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>
+                <td><img src="images/saa.png" width="80PX"></td>
+                <td>The TAG Heuer Connected </td>
+                <td>$21450.00</td>
+                <td><input type="number" value="1"></td>
+                <td>$21450.00</td>
+            </tr>
+        </table>
+
+
+
+        <div class="cart-total">
+            <h2>CART TOTAL</h2>
+            <p>Subtotal: <span>$24000.00</span></p>
+            <p>Shipping: <span>$0.00</span></p>
+            <p>Total: <span>$24000.00</span></p>
+            <button>PROCEED TO CHECKOUT</button>
+        </div>
+    </main>
+
+    <!-- footer -->
+    <div class="footer">
+        <div class="containerr">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Download Our App</h3>
+                    <p>Download App for Android and IOS</p>
+                    <div class="app-logo">
+                        <img src="images/play-store.png">
+                        <img src="images/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="images/logo.png">
+                    <p>Our purpose is to sustainably make the pleasure and benefits of sports accessible to many</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Follow us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">&copy; 2024 EKKAB Store All rights reserved</p>
+        </div>
+    </div>
+
+    <script>
+        var MenuItems = document.getElementById("MenuItems");
+
+        MenuItems.style.maxHeight = "0px";
+
+        function menutggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            }
+            else {
+                MenuItems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            const quantityInputs = document.querySelectorAll('input[type="number"]');
+            const totalPriceCells = document.querySelectorAll('tbody td:last-child');
+            const subtotalElement = document.querySelector('.cart-total p:nth-child(2) span');
+            const totalElement = document.querySelector('.cart-total p:nth-child(4) span');
+
+            const updateTotals = () => {
+                let subtotal = 0;
+                totalPriceCells.forEach(cell => {
+                    subtotal += parseFloat(cell.textContent.replace('$', ''));
+                });
+                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+                totalElement.textContent = `$${subtotal.toFixed(2)}`;
+            };
+
+            removeButtons.forEach((button, index) => {
+                button.addEventListener('click', () => {
+                    button.closest('tr').remove();
+                    updateTotals();
+                });
+            });
+
+            quantityInputs.forEach((input, index) => {
+                input.addEventListener('input', () => {
+                    const priceCell = input.closest('tr').querySelector('td:nth-child(4)');
+                    const price = parseFloat(priceCell.textContent.replace('$', ''));
+                    const totalCell = input.closest('tr').querySelector('td:last-child');
+                    totalCell.textContent = `$${(price * input.value).toFixed(2)}`;
+                    updateTotals();
+                });
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
