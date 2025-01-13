@@ -1,17 +1,3 @@
-var MenuItems = document.getElementById("MenuItems");
-
-MenuItems.style.maxHeight = "0px";
-
-function menutggle() {
-    if (MenuItems.style.maxHeight == "0px") {
-        MenuItems.style.maxHeight = "200px";
-    }
-    else {
-        MenuItems.style.maxHeight = "0px";
-    }
-}
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const removeButtons = document.querySelectorAll('.remove-btn');
     const quantityInputs = document.querySelectorAll('input[type="number"]');
